@@ -43,26 +43,39 @@ header h3 {
 }
 
 .card-container{
+    max-width: calc(50% - 120px);
+    width: 100%;
     display:flex;
-    /* flex-flow: row nowrap; */
     flex-flow: column nowrap;
+
     align-items: center;
     gap:40px;
-    margin: 20px;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.card-container:nth-child(4){
+    display: none;
+}
+
+@media (min-width:801px){
+    .card-container{
+        flex-flow: row wrap;
+    }
+
+    .card-container:nth-child(4){
+        display:flex;
+    }
 }
 
 .card{
     position: relative;
     background-color: #F3F3F3;
     max-width: 350px;
+    /* width: 100%;
+    max-width: calc(50% - 40px); */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px 10px 0 0;
-}
-
-
-
-.card-container:nth-child(4){
-    display: none;
 }
 
 .card .background{
@@ -77,6 +90,13 @@ header h3 {
     width: var(--profile-img-size);
     left: calc(50% - var(--profile-img-half));
     top: var(--profile-img-half);
+}
+
+.card .heart{
+    position: absolute;
+    width: 35px;
+    left: 10px;
+    top: 10px;
 }
 
 .card .card-body{
